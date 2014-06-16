@@ -1,0 +1,110 @@
+# -----------------------------
+# Tools
+# -----------------------------
+
+# mise
+eval "$(~/.local/bin/mise activate bash)"
+
+## tmux
+if [[ ! -n $TMUX ]] && [[ "$TMUX_AUTO_START" == "true" ]]; then
+  ID="`tmux list-sessions`"
+  if [[ -z "$ID" ]]; then
+    tmux new-session
+  fi
+  create_new_session="Create New Session"
+  ID="$ID\n${create_new_session}:"
+  ID="`echo $ID | fzf | cut -d: -f1`"
+  if [[ "$ID" = "${create_new_session}" ]]; then
+    tmux new-session
+  elif [[ -n "$ID" ]]; then
+    tmux attach-session -t "$ID"
+  else
+    :  # Start terminal normally
+  fi
+fi
+
+# -----------------------------
+# Alias
+# -----------------------------
+
+alias ll='ls -la'
+alias less='less -R'
+alias sz='source ~/.bashrc'
+alias pre='pre-commit run -a'
+alias cl='codex'
+alias difit='npx -y difit@latest'
+alias dif='difit .'
+alias cz='chezmoi'
+alias czc='chezmoi cd'
+alias cze='chezmoi edit'
+alias cza='chezmoi apply && sz'
+
+## git
+alias gpp='git pp'
+alias gsw='git fetch -p && git sw'
+alias gst='git status'
+
+# -----------------------------
+# Function
+# -----------------------------
+
+function cd_target(){
+  d=$( \
+    fd --type d -H \
+    -E .git \
+    -E node_modules \
+    -E .terragrunt-cache \
+    | fzf )
+
+  if [[ $d = "" ]]; then
+    return
+  fi
+
+  cd $d
+}
+
+bind -x '"\C-k": cd_target'
+
+# 最寄りの.gitがあるディレクトリをrootとする
+function cdr() {
+  export TMP_CDR_DIR=$(pwd)
+
+  while [[ $TMP_CDR_DIR != "/" ]]
+  do
+    if [ -e "$TMP_CDR_DIR/.git" ];then
+      echo $TMP_CDR_DIR
+      cd $TMP_CDR_DIR
+      break
+    else
+      export TMP_CDR_DIR=$( dirname $TMP_CDR_DIR )
+    fi
+  done
+  unset TMP_CDR_DIR
+}
+
+### git
+function main() {
+    if git rev-parse --verify main >/dev/null 2>&1; then
+        switch_pull main
+    elif git rev-parse --verify master >/dev/null 2>&1; then
+        switch_pull master
+    else
+        echo "Neither main nor master branch exists"
+    fi
+}
+
+function switch_pull() {
+    git switch $1
+    git pp
+}
+
+### fzf history
+function fzf-select-history() {
+    local selected
+    selected=$(history | sed 's/^ *[0-9]* *//' | fzf --tac --query "$READLINE_LINE" --reverse)
+    if [[ -n "$selected" ]]; then
+        READLINE_LINE="$selected"
+        READLINE_POINT=${#READLINE_LINE}
+    fi
+}
+bind -x '"\C-r": fzf-select-history'

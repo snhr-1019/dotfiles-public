@@ -1,0 +1,6 @@
+# Documentation
+README.md
+CLAUDE.md
+renovate.json
+.DS_Store
+*.log

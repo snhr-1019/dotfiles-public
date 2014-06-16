@@ -1,0 +1,9 @@
+[tools]
+# mise
+usage = "latest"
+
+# util
+github-cli = "latest"
+chezmoi = "latest"
+fzf = "latest"
+fd = "latest"
