@@ -86,27 +86,27 @@ function cdr() {
 
 ### git
 function main() {
-    if git rev-parse --verify main >/dev/null 2>&1; then
-        switch_pull main
-    elif git rev-parse --verify master >/dev/null 2>&1; then
-        switch_pull master
-    else
-        echo "Neither main nor master branch exists"
-    fi
+  if git rev-parse --verify main >/dev/null 2>&1; then
+    switch_pull main
+  elif git rev-parse --verify master >/dev/null 2>&1; then
+    switch_pull master
+  else
+    echo "Neither main nor master branch exists"
+  fi
 }
 
 function switch_pull() {
-    git switch $1
-    git pp
+  git switch $1
+  git pp
 }
 
 ### fzf history
 function fzf-select-history() {
-    local selected
-    selected=$(history | sed 's/^ *[0-9]* *//' | fzf --tac --query "$READLINE_LINE" --reverse)
-    if [[ -n "$selected" ]]; then
-        READLINE_LINE="$selected"
-        READLINE_POINT=${#READLINE_LINE}
-    fi
+  local selected
+  selected=$(history | sed 's/^ *[0-9]* *//' | fzf --tac --query "$READLINE_LINE" --reverse)
+  if [[ -n "$selected" ]]; then
+    READLINE_LINE="$selected"
+    READLINE_POINT=${#READLINE_LINE}
+  fi
 }
 bind -x '"\C-r": fzf-select-history'
