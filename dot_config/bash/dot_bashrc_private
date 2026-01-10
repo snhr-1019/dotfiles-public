@@ -110,3 +110,11 @@ function fzf-select-history() {
   fi
 }
 bind -x '"\C-r": fzf-select-history'
+
+function bu() {
+  chezmoi cd
+  git fetch
+  git reset --hard origin/main
+  chezmoi apply
+  source ~/.bashrc
+}
