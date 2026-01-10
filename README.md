@@ -1,1 +1,1 @@
-# dotifles-pubic
+# dotfiles-public
