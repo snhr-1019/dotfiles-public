@@ -6,21 +6,32 @@
 eval "$(~/.local/bin/mise activate bash)"
 
 ## tmux
-if [[ ! -n $TMUX ]] && [[ "$TMUX_AUTO_START" == "true" ]]; then
-  ID="`tmux list-sessions`"
+# tmux session selector function
+function ts() {
+  if [[ -n $TMUX ]]; then
+    echo "Already in a tmux session"
+    return 1
+  fi
+
+  local ID create_new_session
+  ID="$(tmux list-sessions 2>/dev/null)"
   if [[ -z "$ID" ]]; then
     tmux new-session
+    return
   fi
   create_new_session="Create New Session"
   ID="$ID\n${create_new_session}:"
-  ID="`echo $ID | fzf | cut -d: -f1`"
+  ID="$(echo $ID | fzf | cut -d: -f1)"
   if [[ "$ID" = "${create_new_session}" ]]; then
     tmux new-session
   elif [[ -n "$ID" ]]; then
     tmux attach-session -t "$ID"
-  else
-    :  # Start terminal normally
   fi
+}
+
+# Auto start tmux
+if [[ ! -n $TMUX ]] && [[ "$TMUX_AUTO_START" == "true" ]]; then
+  ts
 fi
 
 # -----------------------------
