@@ -119,5 +119,6 @@ function bu() {
   git fetch
   git reset --hard origin/main
   chezmoi apply
+  mise self-update -y
   source ~/.bashrc
 }
