@@ -6,7 +6,7 @@
 eval "$(~/.local/bin/mise activate bash)"
 
 ## tmux
-if [[ ! -n $TMUX ]]; then
+if [[ ! -n $TMUX ]] && [[ "$TMUX_AUTO_START" == "true" ]]; then
   ID="`tmux list-sessions`"
   if [[ -z "$ID" ]]; then
     tmux new-session
