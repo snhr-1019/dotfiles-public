@@ -2,11 +2,6 @@
 
 # === ツールのインストール ===
 
-# Claude Code (native)
-if ! command -v claude &> /dev/null; then
-    curl -fsSL https://claude.ai/install.sh | bash
-fi
-
 # mise
 if ! command -v mise &> /dev/null; then
     curl https://mise.run | sh
