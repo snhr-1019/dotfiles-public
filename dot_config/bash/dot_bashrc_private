@@ -129,7 +129,7 @@ function main() {
 
 function switch_pull() {
   git switch $1
-  git pp
+  gpp
 }
 
 ### fzf history
