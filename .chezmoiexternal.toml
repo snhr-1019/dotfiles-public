@@ -3,8 +3,8 @@ type = "file"
 url = "https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh"
 refreshPeriod = "168h"
 
-[".local/bin/sourcegit.linux.arm64.AppImage"]
-type = "file"
-url = 'https://github.com/sourcegit-scm/sourcegit/releases/download/{{ (gitHubLatestRelease "sourcegit-scm/sourcegit").TagName }}/sourcegit-{{ trimPrefix "v" (gitHubLatestRelease "sourcegit-scm/sourcegit").TagName }}.linux.arm64.AppImage'
-executable = true
-refreshPeriod = "168h"
+# [".local/bin/sourcegit.linux.arm64.AppImage"]
+# type = "file"
+# url = 'https://github.com/sourcegit-scm/sourcegit/releases/download/{{ (gitHubLatestRelease "sourcegit-scm/sourcegit").TagName }}/sourcegit-{{ trimPrefix "v" (gitHubLatestRelease "sourcegit-scm/sourcegit").TagName }}.linux.arm64.AppImage'
+# executable = true
+# refreshPeriod = "168h"
