@@ -77,6 +77,7 @@ alias gco='git branch -a | fzf | xargs git checkout'
 alias gsw='git branch -a | fzf | sed "s@remotes/origin/@@g" | xargs git switch'
 
 alias lg='lazygit'
+alias ws='cd $WS/$(ls $WS | fzf)'
 
 # -----------------------------
 # Function
