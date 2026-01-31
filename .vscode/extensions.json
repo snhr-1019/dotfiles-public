@@ -1,0 +1,12 @@
+{
+    "recommendations": [
+        "k--kato.intellij-idea-keybindings",
+        "ms-vscode-remote.vscode-remote-extensionpack",
+        "redhat.vscode-yaml",
+        "davidanson.vscode-markdownlint",
+        "ziyasal.vscode-open-in-github",
+        "tamasfe.even-better-toml",
+        "hverlin.mise-vscode",
+        "openai.chatgpt",
+    ]
+}
