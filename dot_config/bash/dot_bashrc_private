@@ -146,5 +146,10 @@ bind -x '"\C-r": fzf-select-history'
 
 function bu() {
   chezmoi update && chezmoi apply
-  source ~/.bashrc
+  mise self-update -y
+  mise install
+
+  npm install -g @openai/codex
+
+  sz
 }
