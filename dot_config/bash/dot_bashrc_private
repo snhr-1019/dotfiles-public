@@ -118,6 +118,10 @@ function cdr() {
 }
 
 ### git
+function dev() {
+  switch_pull develop
+}
+
 function main() {
   if git rev-parse --verify main >/dev/null 2>&1; then
     switch_pull main
@@ -131,6 +135,60 @@ function main() {
 function switch_pull() {
   git switch $1
   gpp
+}
+
+# Git worktree add - fzfでブランチを選択してworktreeを追加
+function gwta() {
+  local branch_name
+
+  if [ $# -eq 0 ]; then
+    branch_name=$(git branch -a | grep -v HEAD | sed 's/^\*\s*//' | sed 's/^\s*//' | sed 's/remotes\/origin\///' | sort -u | fzf --prompt="Select branch for worktree> ")
+
+    if [ -z "$branch_name" ]; then
+      return 1
+    fi
+  else
+    branch_name="$1"
+  fi
+
+  local repository=$(basename $(pwd))
+  local dir_name=$(echo "$branch_name" | sed 's/\//_/g')
+  local worktree_dir="$WORKTREE_DIR/$repository/$dir_name"
+  mkdir -p "$WORKTREE_DIR/$repository"
+  git worktree add "$worktree_dir" "$branch_name"
+
+  if [ $? -eq 0 ]; then
+    cd "$worktree_dir"
+  fi
+}
+
+# Git worktree remove - fzfで選択してworktreeを削除
+function gwtrm() {
+  local selected_worktree
+  selected_worktree=$(git worktree list | fzf --prompt="Remove worktree> ")
+
+  if [ -n "$selected_worktree" ]; then
+    local worktree_path=$(echo "$selected_worktree" | awk '{print $1}')
+    echo "Removing worktree: $worktree_path"
+    git worktree remove "$worktree_path" --force
+  fi
+}
+
+# Git worktree cd - fzfで選択してworktreeにcd
+function gwtcd() {
+  local selected_worktree
+  selected_worktree=$(git worktree list | grep -v "(bare)" | fzf --prompt="Change to worktree> ")
+
+  if [ -n "$selected_worktree" ]; then
+    local worktree_path=$(echo "$selected_worktree" | awk '{print $1}')
+    cd "$worktree_path"
+  fi
+}
+
+# Git worktree list - worktreeの一覧を見やすく表示
+function gwtls() {
+  echo "=== Git Worktrees ==="
+  git worktree list
 }
 
 ### fzf history
