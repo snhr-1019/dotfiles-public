@@ -162,6 +162,25 @@ function gwta() {
   fi
 }
 
+# Git worktree add -b - 新しいブランチを作成してworktreeを追加
+function gwtab() {
+  if [ $# -eq 0 ]; then
+    echo "Usage: gwtab <branch-name>"
+    return 1
+  fi
+
+  local branch_name="$1"
+  local repository=$(basename $(pwd))
+  local dir_name=$(echo "$branch_name" | sed 's/\//_/g')
+  local worktree_dir="$WORKTREE_DIR/$repository/$dir_name"
+  mkdir -p "$WORKTREE_DIR/$repository"
+  git worktree add -b "$branch_name" "$worktree_dir"
+
+  if [ $? -eq 0 ]; then
+    cd "$worktree_dir"
+  fi
+}
+
 # Git worktree remove - fzfで選択してworktreeを削除
 function gwtrm() {
   local selected_worktree
