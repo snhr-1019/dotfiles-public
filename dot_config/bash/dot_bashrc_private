@@ -138,7 +138,7 @@ function switch_pull() {
 }
 
 # Git worktree add - fzfでブランチを選択してworktreeを追加
-function gwta() {
+function gwa() {
   local branch_name
 
   if [ $# -eq 0 ]; then
@@ -163,9 +163,9 @@ function gwta() {
 }
 
 # Git worktree add -b - 新しいブランチを作成してworktreeを追加
-function gwtab() {
+function gwab() {
   if [ $# -eq 0 ]; then
-    echo "Usage: gwtab <branch-name>"
+    echo "Usage: gwab <branch-name>"
     return 1
   fi
 
@@ -182,7 +182,7 @@ function gwtab() {
 }
 
 # Git worktree remove - fzfで選択してworktreeを削除
-function gwtrm() {
+function gwrm() {
   local selected_worktree
   selected_worktree=$(git worktree list | fzf --prompt="Remove worktree> ")
 
@@ -194,7 +194,7 @@ function gwtrm() {
 }
 
 # Git worktree cd - fzfで選択してworktreeにcd
-function gwtcd() {
+function gwcd() {
   local selected_worktree
   selected_worktree=$(git worktree list | grep -v "(bare)" | fzf --prompt="Change to worktree> ")
 
@@ -205,7 +205,7 @@ function gwtcd() {
 }
 
 # Git worktree list - worktreeの一覧を見やすく表示
-function gwtls() {
+function gwls() {
   echo "=== Git Worktrees ==="
   git worktree list
 }
