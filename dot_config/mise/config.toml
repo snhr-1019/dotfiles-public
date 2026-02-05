@@ -9,3 +9,4 @@ fzf = "latest"
 fd = "latest"
 lazygit = "latest"
 delta = { version = "latest", repo = "andweeb/asdf-delta" }
+postgres = "latest"
