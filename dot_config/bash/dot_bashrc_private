@@ -48,7 +48,7 @@ function ts() {
 }
 
 # Auto start tmux
-if [[ ! -n $TMUX ]] && [[ "$TMUX_AUTO_START" == "true" ]]; then
+if [[ ! -n $TMUX ]] && [[ -n $SSH_CONNECTION ]] && [[ "$TMUX_AUTO_START" == "true" ]]; then
   ts
 fi
 
