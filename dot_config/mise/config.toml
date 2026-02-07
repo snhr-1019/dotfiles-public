@@ -3,6 +3,7 @@
 usage = "latest"
 
 # util
+prek = "latest"
 github-cli = "latest"
 chezmoi = "latest"
 fzf = "latest"
