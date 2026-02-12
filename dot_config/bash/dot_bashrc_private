@@ -23,6 +23,9 @@ PROMPT_COMMAND='PS1="\[\033[1;32m\]\u\[\033[00m\]:\[\033[1;34m\]\w\[\033[1;31m\]
 # mise
 eval "$(~/.local/bin/mise activate bash)"
 
+# zoxide
+eval "$(zoxide init bash)"
+
 ## tmux
 # tmux session selector function
 function ts() {
