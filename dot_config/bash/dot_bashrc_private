@@ -221,6 +221,13 @@ function fzf-select-history() {
 }
 bind -x '"\C-r": fzf-select-history'
 
+function bi() {
+  mise self-update -y
+  mise install
+
+  npm install -g @openai/codex
+}
+
 function bu() {
   chezmoi update && chezmoi apply
   mise self-update -y
