@@ -7,5 +7,6 @@ github-cli = "latest"
 chezmoi = "latest"
 fzf = "latest"
 fd = "latest"
+eza = { version = "latest", repo = "asdf:mise-plugins/mise-eza" }
 lazygit = "latest"
 delta = { version = "latest", repo = "andweeb/asdf-delta" }
