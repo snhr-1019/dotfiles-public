@@ -61,7 +61,7 @@ fi
 
 alias ls='eza'
 alias ll='ls -la'
-alias less='less -R'
+alias less='bat --paging=always --style=plain'
 alias sz='source ~/.bashrc'
 alias pre='pre-commit run -a'
 alias cl='claude'
