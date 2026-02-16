@@ -5,7 +5,7 @@
 add_newline = false
 
 # 1行フォーマット
-format = """$directory$git_branch$git_status$character"""
+format = """$directory $git_branch$git_status$character"""
 
 # ユーザー名
 [username]
