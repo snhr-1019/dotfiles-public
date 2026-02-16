@@ -216,6 +216,8 @@ function bi() {
   mise self-update -y
   mise install
 
+  curl -sS https://starship.rs/install.sh | sh
+
   npm install -g @openai/codex
 }
 
@@ -223,6 +225,8 @@ function bu() {
   chezmoi update && chezmoi apply
   mise self-update -y
   mise install
+
+  curl -sS https://starship.rs/install.sh | sh
 
   npm install -g @openai/codex
 
