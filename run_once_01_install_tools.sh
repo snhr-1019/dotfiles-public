@@ -7,6 +7,11 @@ if ! command -v mise &> /dev/null; then
     curl https://mise.run | sh
 fi
 
+# Starship
+if ! command -v starship &> /dev/null; then
+    curl -sS https://starship.rs/install.sh | sh
+fi
+
 # Codex CLI
 if ! command -v codex &> /dev/null; then
     npm install -g @openai/codex
