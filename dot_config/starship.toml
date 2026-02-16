@@ -4,10 +4,8 @@
 # プロンプト前の空行を無効化
 add_newline = false
 
-# 1行フォーマット（左: ユーザー・ディレクトリ・プロンプト、右: Git情報）
-format = """$directory$character"""
-
-right_format = """$git_branch$git_status"""
+# 1行フォーマット
+format = """$directory$git_branch$git_status$character"""
 
 # ユーザー名
 [username]
