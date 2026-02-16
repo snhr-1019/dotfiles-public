@@ -1,5 +1,5 @@
 ---
-name: pre-commit checks
+name: prek checks
 
 on:
   pull_request:
@@ -10,7 +10,7 @@ on:
       - main
 
 jobs:
-  pre-commit:
+  prek:
     runs-on: ubuntu-slim
     steps:
       - name: Checkout code
@@ -18,10 +18,5 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Set up Python
-        uses: actions/setup-python@v6
-        with:
-          python-version: "3.12"
-
-      - name: Run pre-commit
-        uses: pre-commit/action@v3.0.1
+      - name: Run prek
+        uses: j178/prek-action@v1
