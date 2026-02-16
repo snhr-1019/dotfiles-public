@@ -12,4 +12,3 @@ lazygit = "latest"
 delta = { version = "latest", repo = "andweeb/asdf-delta" }
 zoxide = { version = "latest", repo = "asdf:nyrst/asdf-zoxide" }
 bat = { version = "latest", repo = "asdf:https://gitlab.com/wt0f/asdf-bat" }
-
