@@ -61,7 +61,6 @@ alias cze='chezmoi edit'
 alias cza='chezmoi apply && sz'
 
 ## git
-alias g='git'
 alias gst='git status'
 alias gfp='git fetch -p && git-delete-merged-branches'
 alias gpp='git pull -p && git-delete-merged-branches'
