@@ -1,5 +1,5 @@
-# Starship Configuration
-# https://starship.rs/config/
+# エディターの補完を設定スキーマに合わせて取得
+"$schema" = 'https://starship.rs/config-schema.json'
 
 # プロンプト前の空行を無効化
 add_newline = false
