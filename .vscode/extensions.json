@@ -7,5 +7,6 @@
         "tamasfe.even-better-toml",
         "hverlin.mise-vscode",
         "openai.chatgpt",
+        "jonathan-yeung.mark-sharp",
     ]
 }
