@@ -2,6 +2,9 @@
 # mise
 usage = "latest"
 
+# lang
+go = "latest"
+
 # util
 github-cli = "latest"
 chezmoi = "latest"
