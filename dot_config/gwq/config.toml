@@ -1,0 +1,16 @@
+[worktree]
+basedir = "~/develop/git"
+auto_mkdir = true
+
+[finder]
+preview = true
+
+[naming]
+template = "{{.Repository}}={{.Branch}}"
+
+[cd]
+launch_shell = false
+
+[ui]
+icons = true
+tilde_home = true
