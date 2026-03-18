@@ -17,9 +17,9 @@ Conventional Commitsを使用して、安全かつ最小限のワークフロー
 4. 変更内容の確認：
    - `git diff --cached --stat`でステージ済みの概要を確認します。
    - 無関係な変更が含まれている場合は、コミット前に分割するか確認します。
-5. Conventional Commitメッセージを作成：
-   - 形式：`<type>(<scope>): <summary>`（スコープが不明な場合は省略可）
-   - summaryは命令形、現在形、72文字以内。
+5. Conventional Commitメッセージを日本語で作成：
+   - 形式：`<type>(<scope>): <日本語の要約>`（スコープが不明な場合は省略可）
+   - summaryは日本語で記述し、72文字以内。
    - 最も重要なtypeを選択。該当なしの場合は`chore`をデフォルトとします。
    - 主なtype：`feat`、`fix`、`docs`、`refactor`、`test`、`chore`、`build`、`ci`、`perf`、`style`
 6. 提案したメッセージを表示し、曖昧さがある場合は確認を求めます。
