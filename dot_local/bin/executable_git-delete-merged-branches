@@ -1,1 +1,1 @@
-git branch --merged | grep -vE '^\*|master|develop|main|release/' | xargs -I % git branch -d %
+git branch --merged | grep -vE '^\*|^\+|master|develop|main|release/' | xargs -I % git branch -d %
