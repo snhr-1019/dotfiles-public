@@ -3,10 +3,19 @@
 model = "gpt-5.4"
 model_reasoning_effort = "medium"
 plan_mode_reasoning_effort = "medium"
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
 personality = "pragmatic"
 file_opener = "vscode-insiders"
 suppress_unstable_features_warning = true
 web_search = "cached"
 
+[tui]
+status_line = ["model-with-reasoning", "context-remaining", "project-root", "git-branch"]
+
 [features]
 collaboration_modes = true
+
+[profiles.review]
+approval_policy = "never"
+sandbox_mode = "read-only"
