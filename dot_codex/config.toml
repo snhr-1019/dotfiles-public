@@ -8,5 +8,8 @@ file_opener = "vscode-insiders"
 suppress_unstable_features_warning = true
 web_search = "cached"
 
+[tui]
+status_line = ["model-with-reasoning", "context", "current-dir", "branch"]
+
 [features]
 collaboration_modes = true
