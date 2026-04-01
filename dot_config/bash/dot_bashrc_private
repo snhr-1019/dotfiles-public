@@ -42,6 +42,9 @@ if [[ ! -n $TMUX ]] && [[ "$TMUX_AUTO_START" == "true" ]]; then
   ts
 fi
 
+# codex
+eval "$(codex completion bash)"
+
 # gwq
 eval "$(gwq completion bash)"
 
