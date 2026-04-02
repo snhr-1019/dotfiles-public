@@ -6,7 +6,7 @@ auto_mkdir = true
 preview = true
 
 [naming]
-template = "{{.Repository}}={{.Branch}}"
+template = "{{.Repository}}__{{.Branch}}"
 
 [cd]
 launch_shell = false
