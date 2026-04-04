@@ -8,5 +8,8 @@
         "hverlin.mise-vscode",
         "openai.chatgpt",
         "jonathan-yeung.mark-sharp",
+        "vscjava.vscode-gradle",
+        "vscjava.vscode-java-debug",
+        "github.copilot-chat",
     ]
 }
