@@ -1,1 +1,9 @@
 # shared git config
+[color]
+	ui = auto
+[fetch]
+	prune = true
+[pull]
+	rebase = true
+[rebase]
+	autostash = true
