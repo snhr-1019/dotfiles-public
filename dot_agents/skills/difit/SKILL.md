@@ -6,19 +6,19 @@ description: ユーザーが明示的にdifitでの差分確認を依頼した�
 # difit
 
 ## Overview
-[difit](https://github.com/yoshiko-pg/difit) は Git の差分を GitHub 風の UI でブラウザ表示するツールです。`npx difit` で起動でき、コミット指定や `staged` / `working` / `.` などの特殊引数、PR URL の指定にも対応しています。
+[difit](https://github.com/yoshiko-pg/difit) は Git の差分を GitHub 風の UI でブラウザ表示するツールです。`npx -y difit` で起動でき、コミット指定や `staged` / `working` / `.` などの特殊引数、PR URL の指定にも対応しています。
 
 ## Workflow
 1. カレントディレクトリが Git リポジトリであることを確認します（`git rev-parse --is-inside-work-tree`）。
 2. ユーザーの依頼内容から起動モードを決定（起動時は必ず `--keep-alive` を付与）：
-   - 指定なし：`npx difit --keep-alive`（最新コミット）
-   - ステージ済みのみ：`npx difit staged --keep-alive`
-   - 未ステージのみ：`npx difit working --keep-alive`
-   - 未コミットすべて：`npx difit . --keep-alive`
-   - 特定コミット/ブランチ：`npx difit <commit> --keep-alive`
-   - 2リビジョン比較：`npx difit <commit1> <commit2> --keep-alive`
-   - PR：`npx difit --pr <PR URL> --keep-alive`（`gh` の認証が必要）
-   - 任意の diff をパイプ：`git diff ... | npx difit --keep-alive`
+   - 指定なし：`npx -y difit --keep-alive`（最新コミット）
+   - ステージ済みのみ：`npx -y difit staged --keep-alive`
+   - 未ステージのみ：`npx -y difit working --keep-alive`
+   - 未コミットすべて：`npx -y difit . --keep-alive`
+   - 特定コミット/ブランチ：`npx -y difit <commit> --keep-alive`
+   - 2リビジョン比較：`npx -y difit <commit1> <commit2> --keep-alive`
+   - PR：`npx -y difit --pr <PR URL> --keep-alive`（`gh` の認証が必要）
+   - 任意の diff をパイプ：`git diff ... | npx -y difit --keep-alive`
 3. 必要に応じて追加オプションを付加：
    - `--port <port>`（既定 4966、競合時に変更）
    - `--mode split|unified`
@@ -28,11 +28,11 @@ description: ユーザーが明示的にdifitでの差分確認を依頼した�
 
 ## Examples
 - ユーザー：「difitで差分を見せて」
-  - `npx difit .` を実行して未コミット差分をブラウザで表示。
+  - `npx -y difit .` を実行して未コミット差分をブラウザで表示。
 - ユーザー：「difitでmainとの差分を見たい」
-  - `npx difit HEAD main` のように2リビジョン比較で起動。
+  - `npx -y difit HEAD main` のように2リビジョン比較で起動。
 - ユーザー：「difitでこのPRをレビューしたい <URL>」
-  - `npx difit --pr <URL>` を実行（`gh auth status` で事前確認）。
+  - `npx -y difit --pr <URL>` を実行（`gh auth status` で事前確認）。
 
 ## Guardrails
 - ユーザーが明示的に difit の利用を依頼していない場合は起動しません。
