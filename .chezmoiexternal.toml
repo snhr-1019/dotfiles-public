@@ -8,3 +8,10 @@ type = "file"
 url = "https://raw.githubusercontent.com/junegunn/fzf/master/bin/fzf-tmux"
 executable = true
 refreshPeriod = "168h"
+
+[".local/bin/mo"]
+type = "archive-file"
+url = "https://github.com/k1LoW/mo/releases/download/v1.0.0/mo_v1.0.0_linux_amd64.tar.gz"
+path = "mo"
+executable = true
+refreshPeriod = "168h"
