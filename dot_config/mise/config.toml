@@ -1,19 +1,19 @@
 [tools]
 # mise
-usage = "latest"
+usage = { version = "latest", repo = "asdf:mise-plugins/mise-usage" }
 
 # lang
-go = "latest"
+go = { version = "latest", repo = "asdf:asdf-community/asdf-golang" }
 
 # util
-github-cli = "latest"
-chezmoi = "latest"
-fzf = "latest"
-fd = "latest"
-ripgrep = "latest"
+github-cli = { version = "latest", repo = "asdf:bartlomiejdanek/asdf-github-cli" }
+chezmoi = { version = "latest", repo = "asdf:joke/asdf-chezmoi" }
+fzf = { version = "latest", repo = "asdf:kompiro/asdf-fzf" }
+fd = { version = "latest", repo = "asdf:https://gitlab.com/wt0f/asdf-fd" }
+ripgrep = { version = "latest", repo = "asdf:https://gitlab.com/wt0f/asdf-ripgrep" }
 eza = { version = "latest", repo = "asdf:mise-plugins/mise-eza" }
-lazygit = "latest"
-delta = { version = "latest", repo = "andweeb/asdf-delta" }
+lazygit = { version = "latest", repo = "asdf:nklmilojevic/asdf-lazygit" }
+delta = { version = "latest", repo = "asdf:andweeb/asdf-delta" }
 zoxide = { version = "latest", repo = "asdf:nyrst/asdf-zoxide" }
 bat = { version = "latest", repo = "asdf:https://gitlab.com/wt0f/asdf-bat" }
 glow = { version = "latest", repo = "asdf:mise-plugins/asdf-glow" }
