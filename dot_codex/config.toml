@@ -15,6 +15,7 @@ status_line = ["model-with-reasoning", "context-remaining", "project-root", "git
 
 [features]
 collaboration_modes = true
+codex_hooks = true
 
 [profiles.dev]
 model_reasoning_effort = "high"
