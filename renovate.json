@@ -5,5 +5,14 @@
   ],
   "mise": {
     "fileMatch": ["(^|/)dot_config/mise/config\\.toml$"]
-  }
+  },
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["(^|/)\\.chezmoiexternal\\.toml$"],
+      "matchStrings": [
+        "#\\s*renovate:\\s*datasource=(?<datasource>[a-z-]+?)\\s+depName=(?<depName>\\S+)\\s+url\\s*=\\s*\"\\S*?/(?<currentValue>v\\d+\\.\\d+\\.\\d+)/\\S*\""
+      ]
+    }
+  ]
 }
