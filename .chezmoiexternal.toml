@@ -15,3 +15,8 @@ url = "https://github.com/k1LoW/mo/releases/download/v1.1.0/mo_v1.1.0_linux_amd6
 path = "mo"
 executable = true
 refreshPeriod = "168h"
+
+[".config/tmux/plugins/tmux-power"]
+type = "git-repo"
+url = "https://github.com/wfxr/tmux-power.git"
+refreshPeriod = "168h"
