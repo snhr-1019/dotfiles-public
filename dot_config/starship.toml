@@ -4,34 +4,28 @@
 # プロンプト前の空行を無効化
 add_newline = false
 
-# 1行フォーマット
-format = """$directory $git_branch$git_status$character"""
+# ====== Powerline風 1行プロンプト (全セグメント左寄せ) ======
+format = """[ $directory ](bg:#00abab fg:#262626)([](fg:#00abab bg:#afaf00)[ $git_branch$git_status ](bg:#afaf00 fg:#262626)[](fg:#afaf00)) $character"""
 
-# ユーザー名
-[username]
-show_always = true
-style_user = "bold green"
-format = "[$user]($style)"
 
 # ディレクトリ
 [directory]
 truncation_length = 3
 truncation_symbol = ".../"
 truncate_to_repo = false
-style = "bold cyan"
-format = "[$path]($style)[$read_only]($read_only_style)"
+format = "$path$read_only"
+read_only = " "
 
 # Git ブランチ
 [git_branch]
-symbol = ""
-style = "bold purple"
+symbol = " "
+format = "$symbol$branch"
 
 # Git 状態
 [git_status]
-style = "bold red"
-format = '([$all_status$ahead_behind]($style) )'
+format = '$all_status$ahead_behind'
 
 # プロンプト文字
 [character]
-success_symbol = "[%](bold white)"
+success_symbol = "[%](bold green)"
 error_symbol = "[%](bold red)"
