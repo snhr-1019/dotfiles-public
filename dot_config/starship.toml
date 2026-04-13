@@ -27,5 +27,5 @@ format = '$all_status$ahead_behind'
 
 # プロンプト文字
 [character]
-success_symbol = "[ ❯](bold green)"
-error_symbol = "[ ❯](bold red)"
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
