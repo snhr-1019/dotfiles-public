@@ -17,4 +17,5 @@ delta = { version = "latest", repo = "asdf:andweeb/asdf-delta" }
 zoxide = { version = "latest", repo = "asdf:nyrst/asdf-zoxide" }
 bat = { version = "latest", repo = "asdf:https://gitlab.com/wt0f/asdf-bat" }
 glow = { version = "latest", repo = "asdf:mise-plugins/asdf-glow" }
+yazi = "latest"
 "go:github.com/d-kuro/gwq/cmd/gwq" = "latest"
