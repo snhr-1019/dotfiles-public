@@ -175,7 +175,7 @@ function bi() {
 }
 
 function bu() {
-  chezmoi update && chezmoi apply
+  chezmoi update
   mise self-update -y
   mise install
 
