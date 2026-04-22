@@ -11,5 +11,6 @@
         "vscjava.vscode-gradle",
         "vscjava.vscode-java-debug",
         "github.copilot-chat",
+        "vscode-icons-team.vscode-icons",
     ]
 }
