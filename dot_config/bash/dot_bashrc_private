@@ -42,6 +42,15 @@ if [[ ! -n $TMUX ]] && [[ "$TMUX_AUTO_START" == "true" ]]; then
   ts
 fi
 
+# tmuxウィンドウ名をカレントディレクトリ名に自動更新
+function _tmux_rename_window() {
+  [[ -z $TMUX ]] && return
+  [[ "$PWD" == "$_TMUX_RENAME_LAST_PWD" ]] && return
+  _TMUX_RENAME_LAST_PWD="$PWD"
+  tmux rename-window "${PWD##*/}"
+}
+PROMPT_COMMAND="_tmux_rename_window;${PROMPT_COMMAND:-}"
+
 # codex
 eval "$(codex completion bash)"
 
