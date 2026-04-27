@@ -14,7 +14,8 @@ fi
 
 # Codex CLI
 if ! command -v codex &> /dev/null; then
-    npm install -g @openai/codex
+    rm -rf "$(npm root -g)/@openai/.codex-"*
+    npm install -g @openai/codex@latest
 fi
 
 # GitHub Copilot CLI
