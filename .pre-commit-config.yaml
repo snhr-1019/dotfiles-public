@@ -13,3 +13,8 @@ repos:
     rev: 42.69.1
     hooks:
       - id: renovate-config-validator
+
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.30.1
+    hooks:
+      - id: gitleaks
