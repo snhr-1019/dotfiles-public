@@ -195,8 +195,6 @@ function bu() {
   mise install
   mise upgrade
 
-  curl -sS https://starship.rs/install.sh | sh
-
   install_codex
 
   sz
