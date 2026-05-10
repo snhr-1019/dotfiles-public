@@ -10,7 +10,7 @@ file_opener = "vscode-insiders"
 web_search = "cached"
 suppress_unstable_features_warning = true
 
-notify = ["bash", "-c", "tmux display-message -d 3000 \"✅ $(tmux display -p -t \"$TMUX_PANE\" '#W:#P') Codex完了\""]
+notify = ["bash", "-c", "tmux display-message -d 5000 \"✅ $(tmux display -p -t \"$TMUX_PANE\" '#W:#P') Codex完了\""]
 
 [tui]
 status_line = ["model-with-reasoning", "context-remaining", "project-root", "git-branch"]
