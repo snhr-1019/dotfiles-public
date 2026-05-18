@@ -1,1 +1,2 @@
 # global gitignore settings
+.playwright-mcp
