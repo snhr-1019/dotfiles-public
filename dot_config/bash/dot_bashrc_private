@@ -85,6 +85,7 @@ alias gco='git branch -a | fzf-tmux -p 80%,60% --preview '\''git log --color=alw
 alias gsw='gfp && git branch -a | fzf-tmux -p 80%,60% --preview '\''git log --color=always --oneline --graph --decorate -30 $(echo {} | sed -e "s/^[* ]*//" -e "s@^remotes/@@" -e "s/ .*//")'\'' | sed "s@remotes/origin/@@g" | xargs git switch'
 
 alias lg='lazygit'
+alias sg='sourcegit .'
 alias ws='cd $WS/$(ls $WS | fzf-tmux -p 80%,60%)'
 
 ## gwq (git worktree)
