@@ -1,0 +1,7 @@
+#!/bin/sh
+# SourceGit (AppImage) を WSLg で起動する。
+# FUSE2 が無い WSL 環境でも動くよう --appimage-extract-and-run を使う。
+# 端末を占有しないよう setsid で切り離してバックグラウンド起動する。
+# 引数が無ければカレントディレクトリを開く。
+setsid "$HOME/.local/share/sourcegit/sourcegit.AppImage" --appimage-extract-and-run "${@:-.}" \
+	</dev/null >/dev/null 2>&1 &
