@@ -11,6 +11,7 @@
         "vscjava.vscode-gradle",
         "vscjava.vscode-java-debug",
         "github.copilot-chat",
+        "github.vscode-pull-request-github",
         "vscode-icons-team.vscode-icons",
         "johnpapa.vscode-peacock",
     ]
