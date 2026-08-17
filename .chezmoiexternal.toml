@@ -23,6 +23,6 @@ refreshPeriod = "168h"
 
 [".local/share/sourcegit/sourcegit.AppImage"]
 type = "file"
-url = "https://github.com/sourcegit-scm/sourcegit/releases/download/v2026.17/sourcegit-2026.17.linux.arm64.AppImage"
+url = "https://github.com/sourcegit-scm/sourcegit/releases/download/v2026.18/sourcegit-2026.18.linux.arm64.AppImage"
 executable = true
 refreshPeriod = "168h"
