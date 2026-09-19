@@ -2,8 +2,5 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "github>snhr-1019/renovate-config:default.json5"
-  ],
-  "mise": {
-    "fileMatch": ["(^|/)dot_config/mise/config\\.toml$"]
-  }
+  ]
 }
